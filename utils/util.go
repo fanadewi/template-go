@@ -9,7 +9,7 @@ import (
 func EnsureFolderExist(path string) {
 	_, err := os.Stat(path)
 	if os.IsNotExist(err) {
-		log.Fatal(fmt.Sprintf("%s does not exist. creating folder ...", path))
+		log.Println(fmt.Sprintf("%s does not exist. creating folder ...", path))
 		err = os.Mkdir(path, 0755)
 		if err != nil {
 			log.Fatal(err)
